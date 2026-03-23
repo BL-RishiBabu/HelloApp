@@ -4,14 +4,9 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
-        String names = "";
-        StringBuilder nameBuilder = new StringBuilder();
-        for (String name : args) {
-            nameBuilder.append(name).append(", ");
-        }
-
-        if (nameBuilder.length() > 0) {
-            names = nameBuilder.substring(0, nameBuilder.length() - 2);
+        String names = "World";
+        if (args.length > 0) {
+            names = String.join(", ", args);
         }
         System.out.println("Hello " + names + "!");
     }
