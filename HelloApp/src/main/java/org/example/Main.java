@@ -4,17 +4,15 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main(String[] args) {
+        String names = "";
         StringBuilder nameBuilder = new StringBuilder();
-        String name_s = "";
-        boolean first = true;
-        for (String name: args) {
-            if (!first) {
-                nameBuilder.append(", ");
-            }
-            nameBuilder.append(name);
-            first = false;
+        for (String name : args) {
+            nameBuilder.append(name).append(", ");
         }
-        name_s = nameBuilder.toString();
-        System.out.println("Hello, " + name_s + "!");
+
+        if (nameBuilder.length() > 0) {
+            names = nameBuilder.substring(0, nameBuilder.length() - 2);
+        }
+        System.out.println("Hello " + names + "!");
     }
 }
